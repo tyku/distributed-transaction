@@ -18,29 +18,35 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@app/user-service": [
-        "apps/user-service/src"
-      ],
-      "@app/user-service/*": [
-        "apps/user-service/src/*"
-      ],
       "@app/billing-service": [
         "apps/billing-service/src"
       ],
       "@app/billing-service/*": [
         "apps/billing-service/src/*"
       ],
-      "@app/notification-service": [
-        "apps/notification-service/src"
+      "@app/payment-service": [
+        "apps/payment-service/src"
       ],
-      "@app/notification-service/*": [
-        "apps/notification-service/src/*"
+      "@app/payment-service/*": [
+        "apps/payment-service/src/*"
       ],
-      "@app/order-service": [
-        "apps/order-service/src"
+      "@app/warehouse-service": [
+        "apps/warehouse-service/src"
       ],
-      "@app/order-service/*": [
-        "apps/order-service/src/*"
+      "@app/warehouse-service/*": [
+        "apps/warehouse-service/src/*"
+      ],
+      "@app/delivery-service": [
+        "apps/delivery-service/src"
+      ],
+      "@app/delivery-service/*": [
+        "apps/delivery-service/src/*"
+      ],
+      "@app/coordinator-service": [
+        "apps/coordinator-service/src"
+      ],
+      "@app/coordinator-service/*": [
+        "apps/coordinator-service/src/*"
       ]
     }
   }

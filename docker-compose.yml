@@ -14,14 +14,30 @@ x-app: &app-tpl
       - ./:/home/node/app
 
 services:
-  main-socket-gateway:
+  payment-service:
     <<: *app-tpl
-    container_name: main-gateway
+    container_name: payment-service
     ports:
       - "9000:9000"
-    command: "npm run start:dev user-service"
-
-
+    command: "npm run start:dev payment-service"
+  warehouse-service:
+    <<: *app-tpl
+    container_name: warehouse-service
+    ports:
+      - "9001:9000"
+    command: "npm run start:dev warehouse-service"
+  delivery-service:
+    <<: *app-tpl
+    container_name: delivery-service
+    ports:
+      - "9002:9000"
+    command: "npm run start:dev delivery-service"
+  coordinator-service:
+    <<: *app-tpl
+    container_name: coordinator-service
+    ports:
+      - "9003:9000"
+    command: "npm run start:dev coordinator-service"
 volumes:
   redis:
 

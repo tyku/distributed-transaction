@@ -43,6 +43,42 @@
       "compilerOptions": {
         "tsConfigPath": "apps/billing-service/tsconfig.app.json"
       }
+    },
+    "payment-service": {
+      "type": "application",
+      "root": "apps/payment-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/payment-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/payment-service/tsconfig.app.json"
+      }
+    },
+    "warehouse-service": {
+      "type": "application",
+      "root": "apps/warehouse-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/warehouse-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/warehouse-service/tsconfig.app.json"
+      }
+    },
+    "delivery-service": {
+      "type": "application",
+      "root": "apps/delivery-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/delivery-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/delivery-service/tsconfig.app.json"
+      }
+    },
+    "coordinator-service": {
+      "type": "application",
+      "root": "apps/coordinator-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/coordinator-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/coordinator-service/tsconfig.app.json"
+      }
     }
   }
 }
