@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@app/user-service": [
+        "apps/user-service/src"
+      ],
+      "@app/user-service/*": [
+        "apps/user-service/src/*"
+      ],
+      "@app/billing-service": [
+        "apps/billing-service/src"
+      ],
+      "@app/billing-service/*": [
+        "apps/billing-service/src/*"
+      ],
+      "@app/notification-service": [
+        "apps/notification-service/src"
+      ],
+      "@app/notification-service/*": [
+        "apps/notification-service/src/*"
+      ],
+      "@app/order-service": [
+        "apps/order-service/src"
+      ],
+      "@app/order-service/*": [
+        "apps/order-service/src/*"
+      ]
+    }
+  }
+}

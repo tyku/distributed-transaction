@@ -1,0 +1,29 @@
+version: "3.8"
+
+x-app: &app-tpl
+    image: node:14.16.1-alpine
+    restart: always
+    user: "node"
+    working_dir: /home/node/app
+    environment:
+      - NODE_ENV=docker
+      - JAEGER_AGENT_HOST=jaeger
+    networks:
+      - jaeger-tracing-network
+    volumes:
+      - ./:/home/node/app
+
+services:
+  main-socket-gateway:
+    <<: *app-tpl
+    container_name: main-gateway
+    ports:
+      - "9000:9000"
+    command: "npm run start:dev user-service"
+
+
+volumes:
+  redis:
+
+networks:
+  jaeger-tracing-network:
