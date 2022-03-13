@@ -5,19 +5,25 @@ import {
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
-@Entity('payment')
-export class PaymentEntity {
+@Entity('orders')
+export class OrderEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  user_id: string;
-
-  @Column()
-  order_id: string;
-
-  @Column()
   amount: number;
+
+  @Column()
+  status: string;
+
+  @Column()
+  product_id: string;
+
+  @Column()
+  delivery_id: string;
+
+  @Column()
+  payment_id: string;
 
   @CreateDateColumn({
     type: 'timestamp',

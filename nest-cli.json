@@ -8,33 +8,6 @@
     "tsConfigPath": "apps/user-service/tsconfig.app.json"
   },
   "projects": {
-    "user-service": {
-      "type": "application",
-      "root": "apps/user-service",
-      "entryFile": "main",
-      "sourceRoot": "apps/user-service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/user-service/tsconfig.app.json"
-      }
-    },
-    "order-service": {
-      "type": "application",
-      "root": "apps/order-service",
-      "entryFile": "main",
-      "sourceRoot": "apps/order-service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/order-service/tsconfig.app.json"
-      }
-    },
-    "notification-service": {
-      "type": "application",
-      "root": "apps/notification-service",
-      "entryFile": "main",
-      "sourceRoot": "apps/notification-service/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/notification-service/tsconfig.app.json"
-      }
-    },
     "billing-service": {
       "type": "application",
       "root": "apps/billing-service",
@@ -78,6 +51,15 @@
       "sourceRoot": "apps/coordinator-service/src",
       "compilerOptions": {
         "tsConfigPath": "apps/coordinator-service/tsconfig.app.json"
+      }
+    },
+    "order-service": {
+      "type": "application",
+      "root": "apps/order-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/order-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/order-service/tsconfig.app.json"
       }
     }
   }

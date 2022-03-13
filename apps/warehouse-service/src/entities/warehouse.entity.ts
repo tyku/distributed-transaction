@@ -4,21 +4,17 @@ import {
   CreateDateColumn,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { EventTypes } from '@app/billing-service/enums';
 
-@Entity('billing')
+@Entity('warehouse')
 export class WarehouseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
-  user_id: string;
+  item_name: string;
 
-  @Column({
-    type: 'enum',
-    enum: EventTypes,
-  })
-  event: string;
+  @Column()
+  price: number;
 
   @Column()
   amount: number;
