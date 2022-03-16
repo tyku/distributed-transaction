@@ -8,10 +8,11 @@ export default registerAs(
 
     options: {
       client: {
+        clientId: 'coordinator-service',
         brokers: [process.env.KAFKA_BROKER],
       },
       consumer: {
-        groupId: 'order-events',
+        groupId: 'coordinator-service-consumer',
         allowAutoTopicCreation: true,
       },
     },

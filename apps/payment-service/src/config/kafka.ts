@@ -8,10 +8,11 @@ export default registerAs(
 
     options: {
       client: {
+        clientId: 'payment-service',
         brokers: [process.env.KAFKA_BROKER],
       },
       consumer: {
-        groupId: 'order-events',
+        groupId: 'payment-service-consumer',
         allowAutoTopicCreation: true,
       },
     },
