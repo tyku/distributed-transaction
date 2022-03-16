@@ -1,29 +1,93 @@
-# Homework stream-processing
+# Homework distributed transactions
 
-## Install kafka
+## Install payment service
 
-``
+namespace default
+```bash
+helm install payment ./app -f ./payment-service/values.yaml
+```
+
+## Install coordinator service
+
+namespace default
+```bash
+helm install coordinator ./app -f ./coordinator-service/values.yaml
+```
+
+## Install delivery service
+
+namespace default
+```bash
+helm install delivery ./app -f ./delivery-service/values.yaml
+```
+
+## Install order service
+
+namespace default
+```bash
+helm install order ./app -f ./order-service/values.yaml
+```
+
+## Install warehouse service
+
+namespace default
+```bash
+helm install warehouse ./app -f ./warehouse-service/values.yaml
+```
+
+## Install Kafka
+Add repo
+```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
 helm install kafka bitnami/kafka
-``
+```
 
-kafka client pod:
+## Installation nginx ingress
 
-``
-kubectl run kafka-client --restart='Never' --image docker.io/bitnami/kafka:2.8.0-debian-10-r27 --namespace default --command -- sleep infinity
-``
+If you are using minikube, turn on ingress addon with command
+```bash
+minikube addons  enable ingress
+```
 
-kafka producer with test topic:
+Add repo
+```bash
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+```
+Install nginx-ingress
+```bash
+helm install --version "3.35.0" -n nginx-ingress -f ./nginx-ingress/nginx.yaml \
+ingress-nginx ingress-nginx/ingress-nginx
+```
 
-``
-kubectl exec --tty -i kafka-client --namespace default -- bash
-kafka-console-producer.sh --broker-list kafka-0.kafka-headless.default.svc.cluster.local:9092 --topic test
-``
+Apply routes
+```bash
+kubectl apply -f ./nginx-ingress/routes.yaml
 
-kafka consumer with test topic:
+minikube service -n nginx-ingress ingress-nginx-controller
+```
 
-``
-kafka-console-consumer.sh --bootstrap-server kafka-0.kafka-headless.default.svc.cluster.local:9092 --from-beginning --topic test
-``
+## Uninstall
+
+```bash
+helm un user
+helm un order
+helm un billing
+helm un notification
+```
+
+
+## Tests
+Install newman if you wish:
+```
+brew install newman
+```
+and run prepared test
+```
+newman run ./hw_distributed_transaction.postman_collection.json
+```
+or import this file to postman, and start manually
+
 
 Link to course: https://otus.ru/lessons/microservice-architecture
